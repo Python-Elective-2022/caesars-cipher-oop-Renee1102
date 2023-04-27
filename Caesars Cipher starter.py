@@ -103,6 +103,41 @@ class Message(object):
                  another letter (string). 
         '''
         pass #delete this line and replace with your code here
+        ''' 
+       Pesudo Code:
+       new_dict = {}
+       lower = string.ascii_lowercase
+       upper = string.ascii_uppercase
+       
+       for idx in lower:
+        new_dict key of [lower[idx]] = lower[idx plus shift]
+
+
+        for i in range(100):
+            print(i % 5 )
+
+        outcome: 1, 2, 3, 4, 0
+
+        repeat for upper 
+        return new_dict 
+
+        '''
+
+        new_dict = {}
+        lower = string.ascii_lowercase
+        upper = string.ascii_uppercase
+        shift = input("Enter a integer to apply shift: ")
+
+        for idx in range(52):
+            (idx % 2)
+
+        for idx in lower:
+            new_dict[lower[idx]] = lower[idx + shift]
+
+        for idx in upper:
+            new_dict[upper[idx]] = upper[idx + shift]
+        
+        return new_dict 
 
     def apply_shift(self, shift):
         '''
@@ -117,6 +152,38 @@ class Message(object):
              down the alphabet by the input shift
         '''
         pass #delete this line and replace with your code here
+        '''
+        Pseudo Code:
+        new string = ''
+        make shift_dictionary with self.build_shift_dict
+
+        for every letter in self.message_text :
+            look up letter in shift_dict 
+            put shifted letter in new_string 
+            if letter is punctuation or digits or space 
+            don't shift just put in new_string 
+
+        return new string 
+
+        # Testcase 
+        m = Message('happy')
+        test_dict = m.build_shift_dict(3)
+        print (test_dict)
+        print(m.apply_shift(3))
+
+        '''
+
+        new_string = ''
+        shift_dict = self.build_shift_dict 
+
+        for letter in self.message_text:
+            if letter in shift_dict:
+                shift_dict[letter].append(new_string)
+            if letter == string.punctuation or string.digits or (' '):
+                letter.append(new_string)
+
+        return new_string  
+                
 
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
